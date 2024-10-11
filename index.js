@@ -10,6 +10,7 @@ app.use(express.static('public')); // To serve static files (e.g., CSS)
 //Some routes required for full functionality are missing here. Only get routes should be required
 app.get('/', (req, res) => {
     res.render('index');
+    
 });
 
 app.get('/quiz', (req, res) => {
