@@ -25,6 +25,27 @@ function getQuestion() {
  * @returns {boolean} True if the answer was correct, false otherwise.
  */
 function isCorrectAnswer(question, answer) {
+  const firstNumber = question.first;
+  const secondNumber = question.second;
+  const operator = question.operand;
+
+  if (operator == "+") {
+    const plusQ = firstNumber + secondNumber;
+    if (plusQ == answer) return true;
+  }
+  if (operator == "-") {
+    const subQ = firstNumber - secondNumber;
+    if (subQ == answer) return true;
+  }
+  if (operator == "*") {
+    const multiQ = firstNumber * secondNumber;
+    if (multiQ == answer) return true;
+  }
+  if (operator == "/") {
+    const divQ = firstNumber / secondNumber;
+    if (divQ == answer) return true;
+  }
+
   return false;
 }
 
