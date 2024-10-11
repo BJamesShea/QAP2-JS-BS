@@ -42,7 +42,7 @@ function isCorrectAnswer(question, answer) {
     if (multiQ == answer) return true;
   }
   if (operator == "/") {
-    const divQ = firstNumber / secondNumber;
+    const divQ = firstNumber / secondNumber; // DON'T FORGET TO HANDLE WEIRD EDGE CASES WITH DIVISION (I'M PROBABLY GOING TO FORGET)
     if (divQ == answer) return true;
   }
 
