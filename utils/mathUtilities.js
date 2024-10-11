@@ -10,6 +10,11 @@ function getQuestion() {
 
   // Generate a random operatorrrrrrrr
   const operators = ["+", "-", "*", "/"];
+  const operator = operators[Math.floor(Math.random() * operators.length)];
+
+  // randomQuestion obj
+  const randQuestion = { first: num1, second: num2, operand: operator };
+  return randQuestion;
 }
 
 /**
