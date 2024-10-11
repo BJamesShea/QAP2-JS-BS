@@ -43,7 +43,8 @@ function isCorrectAnswer(question, answer) {
   }
   if (operator == "/") {
     const divQ = firstNumber / secondNumber; // DON'T FORGET TO HANDLE WEIRD EDGE CASES WITH DIVISION (I'M PROBABLY GOING TO FORGET)
-    if (divQ == answer) return true;
+    if (divQ == answer) return true; // Other things to consider. Currently quiz is VERY hard as it goes to 100, so you could get questions like 90 * 30.
+    //  Consider changing this.
   }
 
   return false;
