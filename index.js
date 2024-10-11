@@ -1,4 +1,5 @@
 const express = require("express");
+const { getQuestion } = require("./utils/mathUtilities");
 const app = express();
 const port = 3000;
 
@@ -12,7 +13,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/quiz", (req, res) => {
-  res.render("quiz");
+  const question = getQuestion();
+  res.render("quiz", { question });
 });
 
 app.get("/completion", (req, res) => {
