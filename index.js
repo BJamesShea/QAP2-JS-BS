@@ -40,8 +40,8 @@ app.post("/quiz", (req, res) => {
   console.log(`User Answer: ${answer}, Correct: ${isCorrect}`);
 
   if (isCorrect) {
-    streak++; // Increment streak on correct answer
-    res.redirect("/quiz"); // Reload quiz with updated streak
+    streak++;
+    res.redirect("/quiz");
   } else {
     if (streak > 0) {
       leaderboard.push({
@@ -49,8 +49,8 @@ app.post("/quiz", (req, res) => {
         timestamp: new Date().toLocaleString(),
       });
     }
-    streak = 0; // Reset streak on wrong answer
-    res.redirect("/completion"); // Redirect to completion page
+    streak = 0;
+    res.redirect("/completion");
   }
 });
 
