@@ -1,16 +1,11 @@
 body {
-  background: linear-gradient(
-    90deg,
-    rgb(255, 21, 21) 0%,
-    rgb(255, 88, 88) 50%,
-    rgb(255, 185, 185) 100%
-  );
+  background: linear-gradient(90deg, #20adc0, #328a96);
   height: 100%;
   padding: 0px;
   margin: 0px;
   font-family: "Lato", sans-serif;
   display: flex;
-  color: #f6f6f6;
+  color: #ffffff;
 }
 
 .main-content {
@@ -27,7 +22,7 @@ body {
 }
 
 .index_container .navigation__container a {
-  background-color: #ffffff;
+  background-color: #e2e2e2;
   aspect-ratio: 1;
   display: flex;
   height: 300px;
@@ -37,21 +32,34 @@ body {
   border-radius: 5px;
   margin-right: 20px;
   font-size: 25px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.index_container .navigation__container a:link {
-  color: #5d8efb;
+.index_container .navigation__container a:link,
+.index_container .navigation__container a:visited {
+  color: #2b3e41;
   text-decoration: none;
 }
 
-.index_container .navigation__container a:visited {
+.index_container .navigation__container a:hover {
+  color: #328a96;
+  text-decoration: none;
+}
+
+.index_container .navigation__container a:active {
+  color: #2b3e41;
   text-decoration: none;
 }
 
 .index_container .navigation__container :last-child {
+  color: #2b3e41;
   margin-right: 0px;
 }
 
 .questionText {
   font-size: 64px;
+}
+
+.welcome {
+  color: #2b3e41;
 }
