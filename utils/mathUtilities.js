@@ -38,7 +38,7 @@ function isCorrectAnswer(question, answer) {
     case "*":
       correctAnswer = first * second;
       break;
-    case "/":
+    case "/": // note oct 13: division sucks. Logic to make divison easy? i.e make sure answer is always an integer?
       correctAnswer = Math.round((first / second) * 100) / 100; // Rounds to 2 decimals (fixing issue with division being weird)
       break;
     default:
