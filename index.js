@@ -1,3 +1,5 @@
+let streak = 0; // STREAK
+
 const express = require("express");
 const { getQuestion, isCorrectAnswer } = require("./utils/mathUtilities");
 const app = express();
@@ -13,7 +15,7 @@ app.get("/", (req, res) => {
 
 app.get("/quiz", (req, res) => {
   const question = getQuestion();
-  res.render("quiz", { question });
+  res.render("quiz", { question, streak });
 });
 
 app.get("/completion", (req, res) => {
@@ -27,10 +29,6 @@ app.get("/leaderboard", (req, res) => {
 app.post("/quiz", (req, res) => {
   const { first, second, operand, answer } = req.body;
 
-  console.log(
-    `Received: first=${first}, second=${second}, operand=${operand}, answer=${answer}`
-  );
-
   const question = {
     first: Number(first),
     second: Number(second),
@@ -38,13 +36,14 @@ app.post("/quiz", (req, res) => {
   };
 
   const isCorrect = isCorrectAnswer(question, Number(answer));
-  console.log(`Question: ${JSON.stringify(question)}`);
   console.log(`User Answer: ${answer}, Correct: ${isCorrect}`);
 
   if (isCorrect) {
-    res.redirect("/quiz");
+    streak++; // Increment streak on correct answer
+    res.redirect("/quiz"); // Reload quiz with updated streak
   } else {
-    res.redirect("/completion");
+    streak = 0; // Reset streak on wrong answer
+    res.redirect("/completion"); // Redirect to completion page
   }
 });
 

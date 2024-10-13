@@ -5,6 +5,7 @@
   </head>
   <body>
     <h1>Math Quiz</h1>
+
     <form action="/quiz" method="GET">
       <button type="submit">Generate math question</button>
     </form>
@@ -12,6 +13,9 @@
     <p class="questionText">
       <%= question.first %> <%= question.operand %> <%= question.second %>
     </p>
+
+    <p>Current Streak: <%= streak %></p>
+    <!-- Display the streak -->
 
     <form action="/quiz" method="POST">
       <input type="hidden" name="first" value="<%= question.first %>" />
