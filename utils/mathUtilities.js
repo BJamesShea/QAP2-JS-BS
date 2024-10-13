@@ -4,17 +4,22 @@
  * @returns {} The randomly generated math question
  */
 function getQuestion() {
-  // Generating random numbers
-  const num1 = Math.floor(Math.random() * 10);
-  const num2 = Math.floor(Math.random() * 10);
-
-  // Generate a random operatorrrrrrrr
   const operators = ["+", "-", "*", "/"];
   const operator = operators[Math.floor(Math.random() * operators.length)];
 
-  // randomQuestion obj
-  const randQuestion = { first: num1, second: num2, operand: operator };
-  return randQuestion;
+  let first, second;
+
+  if (operator === "/") {
+    second = Math.floor(Math.random() * 9) + 1; // Divisor between 1 and 9
+    const multiplier = Math.floor(Math.random() * 10) + 1; // Multiplier between 1 and 10
+    first = second * multiplier; // Ensure the result is an integer
+  } else {
+    // For other operators, generate random numbers between 0 and 9
+    first = Math.floor(Math.random() * 10);
+    second = Math.floor(Math.random() * 10);
+  }
+
+  return { first, second, operand: operator };
 }
 
 /**

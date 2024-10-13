@@ -1,4 +1,5 @@
 let streak = 0; // STREAK
+let leaderboard = []; // LEADERBOARD
 
 const express = require("express");
 const { getQuestion, isCorrectAnswer } = require("./utils/mathUtilities");
@@ -23,7 +24,7 @@ app.get("/completion", (req, res) => {
 });
 
 app.get("/leaderboard", (req, res) => {
-  res.render("leaderboard");
+  res.render("leaderboard", { leaderboard });
 });
 
 app.post("/quiz", (req, res) => {
@@ -42,6 +43,12 @@ app.post("/quiz", (req, res) => {
     streak++; // Increment streak on correct answer
     res.redirect("/quiz"); // Reload quiz with updated streak
   } else {
+    if (streak > 0) {
+      leaderboard.push({
+        streak,
+        timestamp: new Date().toLocaleString(),
+      });
+    }
     streak = 0; // Reset streak on wrong answer
     res.redirect("/completion"); // Redirect to completion page
   }

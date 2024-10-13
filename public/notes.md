@@ -6,3 +6,6 @@ Maybe make logic that will only return if the result is a full integer. hmm
 color pallette; use adobe palette thing because I'm not creative
 
 remove regenerate question button? Kind of defeats the whole purpose but also 7/5 is hard. hmm
+update: thats hard to do. Maybe ask GPT
+
+\*\* FULL DISCLOSURE: CHATGPT DID THE DIVISION = WHOLE INT FUNCTION BECAUSE THAT HURT MY BRAIN. SORRY
