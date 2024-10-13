@@ -5,8 +5,8 @@
  */
 function getQuestion() {
   // Generating random numbers
-  const num1 = Math.floor(Math.random() * 100);
-  const num2 = Math.floor(Math.random() * 100);
+  const num1 = Math.floor(Math.random() * 10);
+  const num2 = Math.floor(Math.random() * 10);
 
   // Generate a random operatorrrrrrrr
   const operators = ["+", "-", "*", "/"];
@@ -25,29 +25,28 @@ function getQuestion() {
  * @returns {boolean} True if the answer was correct, false otherwise.
  */
 function isCorrectAnswer(question, answer) {
-  const firstNumber = question.first;
-  const secondNumber = question.second;
-  const operator = question.operand;
+  const { first, second, operand } = question;
+  let correctAnswer;
 
-  if (operator == "+") {
-    const plusQ = firstNumber + secondNumber;
-    if (plusQ == answer) return true;
-  }
-  if (operator == "-") {
-    const subQ = firstNumber - secondNumber;
-    if (subQ == answer) return true;
-  }
-  if (operator == "*") {
-    const multiQ = firstNumber * secondNumber;
-    if (multiQ == answer) return true;
-  }
-  if (operator == "/") {
-    const divQ = firstNumber / secondNumber; // DON'T FORGET TO HANDLE WEIRD EDGE CASES WITH DIVISION (I'M PROBABLY GOING TO FORGET)
-    if (divQ == answer) return true; // Other things to consider. Currently quiz is VERY hard as it goes to 100, so you could get questions like 90 * 30.
-    //  Consider changing this.
+  switch (operand) {
+    case "+":
+      correctAnswer = first + second;
+      break;
+    case "-":
+      correctAnswer = first - second;
+      break;
+    case "*":
+      correctAnswer = first * second;
+      break;
+    case "/":
+      correctAnswer = Math.round((first / second) * 100) / 100; // Rounds to 2 decimals (fixing issue with division being weird)
+      break;
+    default:
+      return false;
   }
 
-  return false;
+  console.log(`Expected: ${correctAnswer}, User Answer: ${answer}`);
+  return correctAnswer === answer;
 }
 
 module.exports = {

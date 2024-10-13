@@ -6,17 +6,21 @@
   <body>
     <h1>Math Quiz</h1>
     <form action="/quiz" method="GET">
-      <button type="submit">
-        Generate math question
-
-        <!-- Display the generated question -->
-      </button>
+      <button type="submit">Generate math question</button>
     </form>
-    <p><%= question.first %> <%= question.operand %> <%= question.second %></p>
+
+    <p class="questionText">
+      <%= question.first %> <%= question.operand %> <%= question.second %>
+    </p>
 
     <form action="/quiz" method="POST">
+      <input type="hidden" name="first" value="<%= question.first %>" />
+      <input type="hidden" name="second" value="<%= question.second %>" />
+      <input type="hidden" name="operand" value="<%= question.operand %>" />
+
       <label for="answer">Your Answer:</label>
-      <input type="text" id="answer" name="answer" required />
+      <input type="number" id="answer" name="answer" step="any" required />
+
       <button type="submit">Submit</button>
     </form>
   </body>
