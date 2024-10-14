@@ -30,6 +30,7 @@ function getQuestion() {
  * @returns {boolean} True if the answer was correct, false otherwise.
  */
 function isCorrectAnswer(question, answer) {
+  // Refactoring with VSC turned this function from an if statement to a switch. Why? Are switches better optimized?
   const { first, second, operand } = question;
   let correctAnswer;
 

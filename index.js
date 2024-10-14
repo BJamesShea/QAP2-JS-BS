@@ -26,7 +26,6 @@ app.get("/completion", (req, res) => {
 app.get("/leaderboard", (req, res) => {
   res.render("leaderboard", { leaderboard });
 });
-
 app.post("/quiz", (req, res) => {
   const { first, second, operand, answer } = req.body;
 
@@ -45,6 +44,7 @@ app.post("/quiz", (req, res) => {
   } else {
     if (streak > 0) {
       leaderboard.push({
+        user: `User ${leaderboard.length + 1}`,
         streak,
         timestamp: new Date().toLocaleString(),
       });

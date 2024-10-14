@@ -3,6 +3,16 @@
     <%- include('partials/header') %>
     <main class="main-content index_container">
       <h1>Leaderboard</h1>
+      <% if (leaderboard.length > 0) { %> <% leaderboard.forEach(function
+      (entry, index) { %>
+      <p>
+        <strong><%= entry.user %>:</strong> Streak of <%= entry.streak %>
+        (Achieved on <%= entry.timestamp %>)
+      </p>
+      <% }) %> <% } else { %>
+      <p>No entries yet!</p>
+      <% } %>
+
       <form action="/" method="GET">
         <button type="submit">Main Menu</button>
       </form>
