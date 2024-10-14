@@ -2,11 +2,14 @@
   <body>
     <%- include('partials/header') %>
     <main class="main-content index_container">
-      <h1>Leaderboard</h1>
+      <div class="leaderboardBox">
+        <h1 class="leaderboardHeader">Leaderboard</h1>
+        <p>View your score below!</p>
+      </div>
       <% if (leaderboard.length > 0) { %> <% leaderboard.forEach(function
       (entry, index) { %>
       <div class="card">
-        <p>
+        <p class="leaderboardEntry">
           <strong><%= entry.user %>:</strong> Streak of <%= entry.streak %>
           (Achieved on <%= entry.timestamp %>)
         </p>

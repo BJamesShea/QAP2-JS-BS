@@ -99,9 +99,36 @@ p {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   padding: 50px;
   border-radius: 12px;
-  background-color: #2b3e41;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #2b3e41;
+  width: 850px;
+}
+
+.leaderboardEntry {
+  color: #2b3e41;
+}
+
+.leaderboardBox {
+  width: 940px;
+  background-color: #2b3e41;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.leaderboardHeader {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  font-size: 48px;
 }
