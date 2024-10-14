@@ -10,18 +10,15 @@ function getQuestion() {
   let first, second;
 
   if (operator === "/") {
-    second = Math.floor(Math.random() * 9) + 1; // Divisor between 1 and 9
-    const multiplier = Math.floor(Math.random() * 10) + 1; // Multiplier between 1 and 10
-    first = second * multiplier; // Ensure the result is an integer
+    second = Math.floor(Math.random() * 9) + 1;
+    const multiplier = Math.floor(Math.random() * 10) + 1;
+    first = second * multiplier;
   } else {
-    // For other operators, generate random numbers between 0 and 9
     first = Math.floor(Math.random() * 10);
     second = Math.floor(Math.random() * 10);
   }
-
   return { first, second, operand: operator };
 }
-
 /**
  * Parses the provided question and gets whether or not the provided answer is correct
  *
