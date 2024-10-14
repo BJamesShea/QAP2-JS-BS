@@ -9,3 +9,6 @@ remove regenerate question button? Kind of defeats the whole purpose but also 7/
 update: thats hard to do. Maybe ask GPT
 
 \*\* FULL DISCLOSURE: CHATGPT DID THE DIVISION = WHOLE INT FUNCTION BECAUSE THAT HURT MY BRAIN. SORRY
+
+colors decided;
+#20adc0, #328a96, #2b3e41

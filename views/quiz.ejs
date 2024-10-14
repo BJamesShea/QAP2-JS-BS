@@ -4,32 +4,36 @@
     <%- include('partials/header') %>
   </head>
   <body>
-    <div class="navigation__container">
-      <h1>Math Quiz</h1>
+    <main class="main-content quiz_container">
+      <div class="quizBox">
+        <h1>Math Quiz</h1>
 
-      <p class="questionText">
-        <%= question.first %> <%= question.operand %> <%= question.second %>
-      </p>
+        <p class="questionText">
+          <%= question.first %> <%= question.operand %> <%= question.second %>
+        </p>
 
-      <p>Current Streak: <%= streak %></p>
-      <!-- Display the streak -->
+        <p>Current Streak: <%= streak %></p>
 
-      <form action="/quiz" method="POST">
-        <input type="hidden" name="first" value="<%= question.first %>" />
-        <input type="hidden" name="second" value="<%= question.second %>" />
-        <input type="hidden" name="operand" value="<%= question.operand %>" />
+        <form action="/quiz" method="POST" class="quizForm">
+          <input type="hidden" name="first" value="<%= question.first %>" />
+          <input type="hidden" name="second" value="<%= question.second %>" />
+          <input type="hidden" name="operand" value="<%= question.operand %>" />
 
-        <label for="answer">Your Answer:</label>
-        <input type="number" id="answer" name="answer" step="any" required />
+          <label for="answer">Your Answer:</label>
+          <input type="number" id="answer" name="answer" step="any" required />
 
-        <button type="submit">Submit</button>
-      </form>
-      <form action="/" method="GET">
-        <button type="submit">Main Menu</button>
-      </form>
-      <form action="/leaderboard" method="GET">
-        <button type="submit">View Leaderboards</button>
-      </form>
-    </div>
+          <button type="submit" class="quizButton">Submit</button>
+        </form>
+
+        <div class="quizActions">
+          <form action="/" method="GET">
+            <button type="submit" class="quizButton">Main Menu</button>
+          </form>
+          <form action="/leaderboard" method="GET">
+            <button type="submit" class="quizButton">View Leaderboards</button>
+          </form>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
