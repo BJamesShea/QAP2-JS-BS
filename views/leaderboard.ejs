@@ -5,10 +5,12 @@
       <h1>Leaderboard</h1>
       <% if (leaderboard.length > 0) { %> <% leaderboard.forEach(function
       (entry, index) { %>
-      <p>
-        <strong><%= entry.user %>:</strong> Streak of <%= entry.streak %>
-        (Achieved on <%= entry.timestamp %>)
-      </p>
+      <div class="card">
+        <p>
+          <strong><%= entry.user %>:</strong> Streak of <%= entry.streak %>
+          (Achieved on <%= entry.timestamp %>)
+        </p>
+      </div>
       <% }) %> <% } else { %>
       <p>No entries yet!</p>
       <% } %>
