@@ -14,3 +14,9 @@ colors decided;
 #20adc0, #328a96, #2b3e41
 
 sometimes EJS doesnt like arrow functions. Did Matt tell us that? who knows, find out next episode on DBZ
+
+Styling for leaderboard and quiz panel;
+
+- maybe use cards instead of a table. May look more modern.
+- white div boxes for streaks in leaderboard to match home page.
+- hover effect on leaderboard probably bad idea as you don't want to cover other entries. (?)
