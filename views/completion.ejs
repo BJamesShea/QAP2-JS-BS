@@ -1,21 +1,28 @@
-<html>
-  <body>
-    <!-- The header ejs template is included to ensure our CSS and fonts are loaded -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <%- include('partials/header') %>
+  </head>
+  <body>
     <main class="main-content index_container">
-      <div class="navigation__container">
+      <div class="completionBox">
         <h1>Thanks for playing!</h1>
+
         <form action="/quiz" method="GET">
-          <button type="submit">Try again?</button>
-        </form>
-        <form action="/" method="GET">
-          <button type="submit">Main Menu</button>
-        </form>
-        <form action="/leaderboard" method="GET">
-          <button type="submit">View Leaderboards</button>
+          <button type="submit" class="completionButton">Try again?</button>
         </form>
 
-        <button>Credits</button>
+        <form action="/" method="GET">
+          <button type="submit" class="completionButton">Main Menu</button>
+        </form>
+
+        <form action="/leaderboard" method="GET">
+          <button type="submit" class="completionButton">
+            View Leaderboards
+          </button>
+        </form>
+
+        <button class="completionButton">Credits</button>
       </div>
     </main>
   </body>
